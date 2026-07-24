@@ -1,0 +1,28 @@
+QUESTION 1 - EXPLANATIONS
+
+1. mkdir -p submissions backup
+Created the submissions and backup directories for storing assignment files and backups.
+
+2. Sample files were created in the submissions directory.
+Created sample student submission files to demonstrate duplicate file detection.
+
+3. ls -l submissions
+Listed the submission files with detailed information and verified that the sample files were created successfully.
+
+4. The duplicate_backup.sh script was designed and executed.
+The script identifies duplicate submissions, backs up unique files, generates a processing report, and stores errors separately.
+
+5. Duplicate detection
+The script uses file comparison techniques to identify submissions with identical content and avoid backing up duplicate files.
+
+6. Backup of unique submissions
+Unique submission files are copied to the backup directory so that only one copy of each unique submission is preserved.
+
+7. Report generation
+The report records the number of files processed, duplicate files identified, and unique files backed up.
+
+8. Error handling
+Error messages are redirected to a separate error file so that normal output and error information remain separated.
+
+9. Linux commands and redirection
+Commands such as find, cmp, cp, mkdir, and wc are useful for file handling and processing. Redirection operators such as > and 2> separate normal output from error messages, while file-handling techniques help efficiently manage submissions and backups.

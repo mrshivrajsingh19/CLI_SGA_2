@@ -1,0 +1,35 @@
+QUESTION 4 - EXPLANATIONS
+
+1. mkdir -p ~/SGA-2-ASSIGNMENT/Question4
+Created the Question4 directory along with any required parent directories.
+
+2. cd ~/SGA-2-ASSIGNMENT/Question4
+Changed the current working directory to the Question4 folder.
+
+3. pwd
+Verified that the current working directory was Question4.
+
+4. nano system.log
+Created and edited a sample log file containing INFO and ERROR messages.
+
+5. cat system.log
+Displayed the contents of the log file to verify that the log entries were created successfully.
+
+6. tail system.log
+Displayed the last few lines of the log file. The tail command is useful for viewing recent log entries.
+
+7. grep "ERROR" system.log > error_report.txt 2> /dev/null
+Filtered ERROR messages from the log file and stored them in error_report.txt. The > operator redirects output to the report file, while 2> /dev/null suppresses unnecessary error messages.
+
+8. cat error_report.txt
+Displayed the error report to verify that only ERROR messages were extracted successfully.
+
+9. ls
+Listed the files in the current directory to verify that system.log and error_report.txt were created successfully.
+
+DESIGNED REAL-TIME MONITORING PIPELINE:
+
+tail -f system.log | grep "ERROR" > error_report.txt 2> /dev/null
+
+Explanation:
+The tail -f command continuously monitors the log file for newly added entries. The pipe (|) sends the output of tail to grep, which filters only ERROR messages. The > operator redirects the filtered messages to error_report.txt, while 2> /dev/null suppresses unnecessary error messages. This pipeline provides an efficient way to continuously monitor a log and maintain a separate ERROR report.

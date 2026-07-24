@@ -1,0 +1,22 @@
+QUESTION 2 - EXPLANATIONS
+
+1. Process creation
+The fork() system call creates child processes from the parent process. Each child process performs its assigned work independently.
+
+2. Process monitoring
+The parent process monitors the child processes and tracks their execution using process identifiers returned by fork().
+
+3. Waiting for children
+The waitpid() system call allows the parent to wait for child processes and collect their exit status. This prevents completed child processes from becoming zombies.
+
+4. Zombie prevention
+The parent uses waitpid() to reap terminated child processes. This removes their entries from the process table and prevents zombie processes.
+
+5. Signal handling
+Signals are used to communicate with and control processes. A signal handler can respond to termination-related events.
+
+6. Terminating unresponsive children
+If a child process becomes unresponsive, the parent can send an appropriate signal such as SIGTERM to request graceful termination. SIGKILL can be used when a process does not respond to normal termination.
+
+7. Process creation, waiting, and signals
+Together, fork(), waitpid(), and signal handling allow the parent to create and monitor children, clean up terminated processes, and terminate unresponsive processes when necessary.
