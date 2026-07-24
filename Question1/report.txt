@@ -1,0 +1,6 @@
+Question 1 Report
+
+Original submission files were stored in the submissions directory.
+Duplicate files were identified and backed up using duplicate_backup.sh.
+Screenshots of the executed commands and results are stored in the screenshots directory.
+The backup directory is included for backup files.
