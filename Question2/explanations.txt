@@ -1,22 +1,22 @@
 QUESTION 2 - EXPLANATIONS
 
-1. Process creation
-The fork() system call creates child processes from the parent process. Each child process performs its assigned work independently.
+1. fork()
+The fork() system call creates child processes from the parent process. Each child can execute independently.
 
 2. Process monitoring
-The parent process monitors the child processes and tracks their execution using process identifiers returned by fork().
+The parent process monitors the execution of child processes using their process IDs and waits for their completion.
 
-3. Waiting for children
-The waitpid() system call allows the parent to wait for child processes and collect their exit status. This prevents completed child processes from becoming zombies.
+3. waitpid()
+waitpid() allows the parent to wait for specific child processes and collect their exit status.
 
 4. Zombie prevention
-The parent uses waitpid() to reap terminated child processes. This removes their entries from the process table and prevents zombie processes.
+The parent calls waitpid() to reap terminated child processes, preventing them from remaining as zombie processes.
 
 5. Signal handling
-Signals are used to communicate with and control processes. A signal handler can respond to termination-related events.
+Signals provide a mechanism for communicating with and controlling processes.
 
-6. Terminating unresponsive children
-If a child process becomes unresponsive, the parent can send an appropriate signal such as SIGTERM to request graceful termination. SIGKILL can be used when a process does not respond to normal termination.
+6. SIGTERM and SIGKILL
+SIGTERM requests graceful termination of an unresponsive child. If the child does not respond, SIGKILL can force termination.
 
-7. Process creation, waiting, and signals
-Together, fork(), waitpid(), and signal handling allow the parent to create and monitor children, clean up terminated processes, and terminate unresponsive processes when necessary.
+7. Overall solution
+fork() creates child processes, monitoring checks their execution, waitpid() cleans up terminated children, and signals allow unresponsive children to be terminated.

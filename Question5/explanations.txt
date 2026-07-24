@@ -1,7 +1,11 @@
 QUESTION 5 - EXPLANATIONS
 
-This question is theoretical and does not require execution of Linux commands.
+This question evaluates theoretical recovery mechanisms available in vi.
 
-The answer evaluates the recovery mechanisms available in vi, including swap files, undo history, registers, backup files, and auto-recovery.
+Swap files and auto-recovery are the most useful mechanisms after an unexpected crash because they can preserve and recover unsaved editing changes.
 
-The most reliable strategy is to use the swap file and vi's recovery mechanism because they can recover unsaved changes after a system crash. Backup files provide an additional safeguard by preserving the previous version of the configuration file.
+Undo history and registers are useful during an active editing session but are less suitable as the primary crash-recovery method.
+
+Backup files provide an additional safety layer by preserving the previous version of the configuration file.
+
+The recommended strategy is to recover from the swap file after a crash, verify the recovered configuration carefully, and maintain backup files as an additional safeguard.

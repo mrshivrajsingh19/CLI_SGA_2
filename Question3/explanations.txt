@@ -1,25 +1,22 @@
 QUESTION 3 - EXPLANATIONS
 
 1. open()
-The open() system call creates or opens the employee data file and returns a file descriptor used by other system calls.
+open() creates or opens the employee data file and returns a file descriptor for low-level file operations.
 
 2. write()
-The write() system call writes employee records directly to the file using the file descriptor without relying on standard C library file functions.
+write() stores employee records directly in the file using the file descriptor.
 
 3. lseek()
-The lseek() system call moves the file offset to a specific position. This allows a particular employee record to be accessed or updated without rewriting the entire file.
+lseek() moves the file offset to a specific position, allowing a particular record to be accessed without processing the entire file.
 
 4. read()
-The read() system call retrieves employee records from the file starting at the current file offset. Using lseek() before read() allows records from any location to be accessed efficiently.
+read() retrieves employee records from the current file position. Combined with lseek(), it allows efficient random access.
 
-5. close()
-The close() system call releases the file descriptor after all file operations are completed.
+5. Updating records
+For fixed-size records, lseek() moves directly to the selected record and write() replaces it without rewriting the entire file.
 
-6. Updating records
-Because employee records have a fixed size, lseek() can move directly to the position of a selected record and write() can replace that record without rewriting the entire file.
+6. close()
+close() releases the file descriptor after file processing is complete.
 
-7. Efficient retrieval
-lseek() and read() allow the program to jump directly to the required record and retrieve it efficiently.
-
-8. Overall solution
-The combination of open(), write(), lseek(), read(), and close() provides low-level file processing using Linux system calls and enables efficient creation, updating, and retrieval of employee records.
+7. Overall solution
+open(), read(), write(), lseek(), and close() provide low-level Linux system-call-based file processing and efficient record access.

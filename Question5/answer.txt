@@ -2,21 +2,21 @@ QUESTION 5
 
 Recovery mechanisms available in vi:
 
-1. Swap Files (.swp)
-vi automatically creates a swap file while editing. If the system crashes, the swap file can be used to recover unsaved changes.
+1. Swap Files
+vi creates a swap file while editing. After a crash, the swap file can contain unsaved changes and can be used for recovery.
 
 2. Undo History
-Undo allows recently made changes to be reversed during the editing session. However, it cannot reliably recover work after the editor has closed unexpectedly.
+Undo reverses changes made during the current editing session. It is useful for accidental changes but is not the most reliable method after a system crash.
 
 3. Registers
-Registers temporarily store copied or deleted text. They help restore accidentally deleted content but are not primarily intended for crash recovery.
+Registers temporarily store copied or deleted text. They can help recover text during an editing session but are not primarily designed for crash recovery.
 
 4. Backup Files
-Backup files preserve a previous version of the original file before editing. They protect the earlier version but may not contain the latest unsaved changes.
+Backup files preserve an earlier version of the original configuration file. They provide protection against data loss but may not contain the latest unsaved changes.
 
 5. Auto-Recovery
-vi can detect a swap file after an unexpected crash and provide an option to recover the unsaved editing session.
+When vi detects an existing swap file after a crash, it can offer recovery of the unsaved editing session.
 
 Most Reliable Recovery Strategy:
 
-The most reliable recovery strategy is to use the swap file together with vi's recovery feature. The swap file preserves the editing session, allowing unsaved changes to be recovered after a crash. Backup files provide an additional safeguard by preserving the previous version of the configuration file.
+The most reliable strategy is to use the vi swap file and recovery mechanism after a crash, followed by checking the recovered content carefully. Regular backup files should also be maintained as an additional safety measure. This combination provides protection for both unsaved changes and the previous stable version of the configuration file.
